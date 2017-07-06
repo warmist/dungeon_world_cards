@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{graphicx,txfonts}
+%\graphicspath{ {"E:/Google diskas/Game Mastering/Dungeon world/Magic items/"} }
+\usepackage[space]{grffile}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{lipsum}  % For dummy text
+\usepackage[margin=1cm]{geometry} % To make margins smaller
+\usepackage{microtype}  % To improve hyphenation, justification etc...
+\usepackage{pgfpages}
+\usepackage[noinfo,center,dvips,frame]{crop}
+\usepackage{verbatim}
+\pgfpagesuselayout{8 on 1}[a4paper,border shrink=0mm,landscape ]
+
+
+\newcommand{\magicitem}[2]{
+{\noindent \bfseries #1} \hspace*{\fill} #2
+\newline
+}
+
+\newcommand\shield{%
+    \tikz [baseline] \draw (0,1.75ex) -- (0,0.75ex) arc [radius=0.75ex, start angle=-180, end angle=0] -- (1.5ex,1.75ex) -- cycle;%
+}
+
+\newcommand{\simpleline}{
+{\par\noindent\raisebox{.8ex}{\hbox{\rule{\textwidth}{1pt}}}}
+}
+
+\newcommand{\monster}[8]{
+{\noindent \bfseries \fontsize{40}{50}\selectfont #1}  \hspace*{\fill}{  \fontsize{30}{30}\selectfont \begin{tabular}{llrr} \ensuremath\varheartsuit: & #2 \\ \shield:& #3\end{tabular}}
+
+{\noindent \bfseries #4}
+
+#5
+
+\simpleline
+
+{\noindent #6}
+\simpleline
+
+\textbf{Moves:}
+\begin{itemize}
+#7
+\end{itemize}
+\simpleline
+
+#8
+}
+\pagestyle{empty}
+\begin{document}
+\fontsize{27}{24}\selectfont
+
+\begin{comment}
+\include{goblin_bane}
+%\include{sword_etmours}
+%\include{{"Immovable Rod/immovable_rod"}}
+%\include{{"Lich Skull/file"}}
+\include{{"Flask of breath/file"}}
+\include{{"Bag of holding/file"}}
+\include{"mon_ikarza"}
+\include{"mon_elite_guard"}
+\include{{"Iskander LoveLetter"}}
+\include{{"Holt LoveLetter"}}
+\end{comment}
+
+\include{{"mon_vampire_lord"}}
+
+\end{document}
